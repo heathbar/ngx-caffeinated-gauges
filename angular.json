@@ -1,7 +1,42 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "cli": {
+    "analytics": false
+  },
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-  }
+    "ngx-caffeinated-gauges": {
+      "projectType": "library",
+      "root": "projects/ngx-caffeinated-gauges",
+      "sourceRoot": "projects/ngx-caffeinated-gauges/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/ngx-caffeinated-gauges/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/ngx-caffeinated-gauges/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/ngx-caffeinated-gauges/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ngx-caffeinated-gauges/src/test.ts",
+            "tsConfig": "projects/ngx-caffeinated-gauges/tsconfig.spec.json",
+            "karmaConfig": "projects/ngx-caffeinated-gauges/karma.conf.js"
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "ngx-caffeinated-gauges"
 }

@@ -11,6 +11,12 @@
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     "sourceMap": true,
+    "paths": {
+      "ngx-caffeinated-gauges": [
+        "dist/ngx-caffeinated-gauges/ngx-caffeinated-gauges",
+        "dist/ngx-caffeinated-gauges"
+      ]
+    },
     "declaration": false,
     "downlevelIteration": true,
     "experimentalDecorators": true,
